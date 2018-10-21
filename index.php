@@ -7,10 +7,21 @@ include 'Helper.php';
 
 use Hack4mer\Diffon\Diffon;
 
-//Well aware of the security hole here
-//Should not be pushed to production server
+$root = "./";
 $source = empty($_GET['src']) ?  "v1":$_GET['src']; 
 $destination = empty($_GET['dest']) ?  "v2":$_GET['dest'];
+
+$source_check =  strpos(realpath($source), realpath($root));
+$destination_check   =  strpos(realpath($destination), realpath($root));
+
+
+//SECURITY CHECK
+if($source_check!==0 || $destination_check!==0){
+  //Security alert:
+  //Provided source or destination is not a sub-directory of project root
+  $source       = "v1";
+  $destination  = "v2";
+}
 
 $diffon = new Diffon();
 $diffon->setSource($source)->setDestination($destination)->setRecursiveMode(true);
@@ -83,7 +94,7 @@ $current_dir_contents = array_merge($diff['in_both'],$diff['only_in_source'],$di
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="<?=$_SERVER['PHP_SELF']?>">Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -107,8 +118,8 @@ $current_dir_contents = array_merge($diff['in_both'],$diff['only_in_source'],$di
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
-                      <th>Files only in v1</th>
-                      <th>Files only in v2</th>
+                      <th>Files only in <?=$source?></th>
+                      <th>Files only in <?=$destination?></th>
                       <th>Files in both, but different data</th>
                     </tr></thead>
                     <tbody>
