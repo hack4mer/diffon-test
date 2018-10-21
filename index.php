@@ -7,7 +7,9 @@ include 'Helper.php';
 
 use Hack4mer\Diffon\Diffon;
 
-$source = empty($_GET['src']) ?  "v1":$_GET['src'];
+//Well aware of the security hole here
+//Should not be pushed to production server
+$source = empty($_GET['src']) ?  "v1":$_GET['src']; 
 $destination = empty($_GET['dest']) ?  "v2":$_GET['dest'];
 
 $diffon = new Diffon();
