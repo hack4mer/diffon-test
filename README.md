@@ -7,4 +7,4 @@ Demo dashboard for hack4mer/diffon
 
 Open index.php in a web browser (assuming PHP is installed)
 
-FYI: vendor directory is kept in the repository for easy of setup in shared hosting environments without SHELL access.
+FYI: vendor directory is kept in the repository for easy of setup in shared hosting environments without shell access.
