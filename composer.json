@@ -1,0 +1,12 @@
+{
+    "name": "hack4mer/diffon-test",
+    "authors": [
+        {
+            "name": "hack4mer",
+            "email": "singh.ak700@gmail.com"
+        }
+    ],
+    "require": {
+        "hack4mer/diffon": "^1.1"
+    }
+}
