@@ -1,0 +1,37 @@
+[
+    {
+        "name": "hack4mer/diffon",
+        "version": "v1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hack4mer/diffon.git",
+            "reference": "97a9bfe6e2290e009452676406c982c86fc45e56"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hack4mer/diffon/zipball/97a9bfe6e2290e009452676406c982c86fc45e56",
+            "reference": "97a9bfe6e2290e009452676406c982c86fc45e56",
+            "shasum": ""
+        },
+        "time": "2018-10-21T09:41:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Hack4mer\\Diffon\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "hack4mer",
+                "email": "mail@anand.today"
+            }
+        ],
+        "description": "A PHP library to find the differences between two given directories"
+    }
+]

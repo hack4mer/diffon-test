@@ -1,0 +1,19 @@
+{
+    "name": "hack4mer/diffon",
+    "description": "A PHP library to find the differences between two given directories",    
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hack4mer",
+            "email": "mail@anand.today"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Hack4mer\\Diffon\\": "src/"
+        }
+    }
+
+}
